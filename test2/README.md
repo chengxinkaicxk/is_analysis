@@ -7,31 +7,41 @@
     @startuml
     
     left to right direction
-    :借阅者: as User
+    :系统管理员: as SysAdmin
     :图书管理员: as Admin
+    :借阅者: as User
     
-    rectangle 图书管理系统 {
-    User ---> (登录)
-    User ---> (查询借阅情况)
-    User ---> (预约图书)
-    User ---> (续借图书)
-    User ---> (查询书目)
-    User ---> (借书卡挂失)
+    
+    rectangle 图书管理系统{
+    User --> (登录)
+    User --> (查询借阅情况)
+    User --> (预约图书)
+    (预约图书).>(登录):<<include>>
+    User --> (续借图书)
+    User --> (查询书目)
+    User --> (借书卡挂失)
+    
     (借出图书).>(验证读者身份信息):<<include>>
-    (借出图书) <- Admin
+    (借出图书) <-  Admin
     (验证读者身份信息)<.(归还图书):<<include>>
     (归还图书)<.(超期罚款):<<extend>>
     (归还图书) <- Admin
-    (读者信息维护) <- Admin
-    (借书卡管理) <- Admin
-    (借书卡挂失)<.(借书卡管理):<<include>>
     (登录)<--- Admin
-    (书目维护) <--- Admin
+    
+    (读者信息维护) <- SysAdmin
+    (借书卡管理).>(借书卡补办):<<extends>>
+    (借书卡管理) <- SysAdmin
+    (借书卡挂失)<.(借书卡管理):<<extends>>
+    (书目维护) <--- SysAdmin
+    (书目维护).>(删除书目):<<extends>>
+    (修改书目)<.(书目维护):<<extends>>
+    (添加书目)<.(书目维护):<<extends>>
     (查询书目)<.(书目维护):<<use>>
     }
+    
     @enduml
 ### 1.2用例图如下：
-![](libManagerSys.png)
+![](libMangerSys.png)
 
 ## 2.参与者说明
 ### 2.1 系统管理员
