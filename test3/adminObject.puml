@@ -1,0 +1,6 @@
+@startuml
+object 图书管理员{
+    姓名=张三
+    职工号=L10111058
+}
+@enduml
