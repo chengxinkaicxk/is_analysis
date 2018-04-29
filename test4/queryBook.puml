@@ -1,0 +1,14 @@
+@startuml
+hide footbox
+actor 读者
+actor 管理员
+actor 系统管理员
+读者 -> 资源项 : getResItem()
+管理员 -> 资源项 : getResItem()
+系统管理员 -> 资源项 : getResItem()
+资源项 -> 馆藏资源 : queryKinds()
+馆藏资源 -> book :getbookinf()
+系统管理员 <-- book :return()
+管理员 <-- book :return()
+读者 <-- book :return()
+@enduml

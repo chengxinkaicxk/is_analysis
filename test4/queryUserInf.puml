@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+actor 读者
+读者 -> 查询界面 :login()
+查询界面 -> user:queryUser()
+查询界面 <-- user:returnUser()
+查询界面 -> reservation : queryReservationRecord()
+查询界面 <-- reservation : returnReservationRecord()
+查询界面 -> book : queryBorrowRecord()
+查询界面 <-- book : returnBorrowRecord()
+查询界面 -> fine : queryFineRecord()
+查询界面 <-- fine : returnFineRecord()
+@enduml

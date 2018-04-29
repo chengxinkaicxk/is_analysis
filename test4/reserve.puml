@@ -1,0 +1,12 @@
+@startuml
+hide footbox
+actor 读者
+读者 -> 图书管理系统 :login()
+图书管理系统 -> book :getbookinf()
+图书管理系统 -> copy_book :check()
+copy_book -> reservation : reservation()
+copy_book -> reservation : getbook()
+copy_book -> reservation : build()
+图书管理系统 <-- reservation
+读者 <-- 图书管理系统 :return()
+@enduml

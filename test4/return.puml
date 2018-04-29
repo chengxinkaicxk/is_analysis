@@ -1,0 +1,15 @@
+@startuml
+hide footbox
+actor 读者
+actor 管理员
+读者 ->  管理员 :还书
+管理员 -> 还书界面 :login()
+还书界面 -> book :getbookinf()
+还书界面 -> loan :getborrowinf()
+还书界面 -> loan :getborrowDate()
+还书界面 -> loan :getnowDate()
+还书界面 -> loan :isOverDate()
+还书界面 -> loan :work()
+还书界面 <-- loan :return()
+管理员 <-- 还书界面 :return()
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+hide footbox
+actor 读者
+actor 管理员
+读者 -> 管理员:需借书目
+管理员->借书系统 : login()
+管理员->借书系统 : show_reader()
+管理员->借书系统 : 1:check()
+借书系统 -> loan :borrow()
+loan -> user :getreader()
+loan -> user :2:check()
+loan -> copy_book : getbookinf()
+copy_book -> reservation :3:check()
+copy_book <-- reservation :1:isBorrow()
+loan -> book :bulidinf()
+借书系统 <-- loan :2:isBorrow()
+管理员 <-- 借书系统 :3:isBorrow()
+读者 <-- 管理员 :4:isBorrow()
+@enduml
