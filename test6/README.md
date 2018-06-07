@@ -4,7 +4,7 @@
 
 |学号|班级|姓名|照片|
 |:-------:|:-------------: | :----------:|:---:|
-|201510414301|软件(本)15-3|程鑫凯|![flow1](../images/孙笑川.png)|
+|201510414301|软件(本)15-3|程鑫凯|![flow1](./images/孙笑川.png)|
 
 ## 1. 概述
 - 基于GitHub的实验管理平台的作用是在线管理实验成绩的Web应用系统。学生和老师的实验内容均存放在GitHUB
@@ -16,15 +16,15 @@
 - 系统自动计算每个学生的所有实验的平均分。
     
 ## 2. 系统总体结构
-![](../images/系统总体结构.png)
+![](./images/系统总体结构.png)
 
 界面设计参见：https://chengxinkaicxk.github.io/is_analysis/test6/UI/index.html
     
 ## 3. 用例图设计 [源码](src/case.puml)
-![](../images/case.png)
+![](./images/case.png)
 
 ## 4. 类图设计 [源码](src/class.puml)
-![](../images/class.png)
+![](./images/class.png)
 
 ## 5. 数据库设计
 - ### [参见数据库设计](./数据库设计.md)
