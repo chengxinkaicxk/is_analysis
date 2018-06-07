@@ -1,0 +1,16 @@
+@startuml
+title 基于GitHub的实验管理平台--选择课程用例的顺序图
+actor user
+user -> login : 执行登录操作
+alt 如果user是老师
+    login -> term: 先选择学期
+    term -> term_sub_record: 选择相应学期的课程
+	term_sub_record-> teachers_sub_record:生成老师选课记录
+
+else 如果user是students
+    login -> term:先选择学期
+    term -> teachers_sub_record: 从老师选课记录表中选择课程
+    teachers_sub_record -> students_sub_record:生成学生选课记录
+end
+
+@enduml

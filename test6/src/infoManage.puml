@@ -1,0 +1,9 @@
+@startuml
+title 基于GitHub的实验管理平台--个人信息管理用例的顺序图
+actor user
+user -> login : 执行登录操作
+login -> users : 修改信息
+users -> users : 修改密码
+users -> users : 修改github账号
+users -> users :  ......
+@enduml

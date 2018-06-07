@@ -1,0 +1,9 @@
+@startuml
+actor teacher
+teacher -> login : 老师登录系统
+login -> tests : 选择批阅的实验
+tests -> students : 获取学生列表
+students -> detailGrades : 获取所有评分项，对每个评分项进行打分
+detailGrades -> grades : 填写老师评语并根据权重值系统自动计算出最终得分
+grades --> teacher : 返回实验成绩及老师评语
+@enduml

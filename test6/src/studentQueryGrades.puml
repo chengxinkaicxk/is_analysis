@@ -1,0 +1,10 @@
+@startuml
+actor student
+student -> login :学生首先登录系统
+login -> students_sub_record :进入到学生已选课程目录
+students_sub_record -> tests :获取指定课程的所有实验
+tests -> grades : 查看实验成绩
+grades -->student :返回所有实验的每个实验的总成绩及评语
+grades -> detailGrades : 查看实验详细成绩及评语
+detailGrades --> student :返回指定实验的详细成绩（各评分项成绩、各评分项权重及总成绩）和老师评语
+@enduml

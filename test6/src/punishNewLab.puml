@@ -1,0 +1,7 @@
+@startuml
+actor teacher
+teacher -> login : 老师首先登录平台
+login -> teachers_sub_record : 查询老师已选课程
+teachers_sub_record -> tests : 选择某一课程，发布实验
+tests --> teacher : 返回实验课题，实验内容，截止日期
+@enduml

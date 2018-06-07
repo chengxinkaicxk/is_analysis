@@ -1,0 +1,11 @@
+@startuml
+actor teacher
+teacher -> login :老师首先登录系统
+login -> teachers_sub_record :进入到已选课程目录
+teachers_sub_record -> tests :获取指定课程的所有实验
+tests -> students : 获取学生列表
+students ->grades :获取所有学生该实验的成绩
+grades --> teacher :返回所有学生该实验的成绩
+grades -> detailGrades : 查看实验详细成绩及评语
+detailGrades --> teacher :返回某个学生指定实验的详细成绩（各评分项成绩、各评分项权重及总成绩）和老师评语
+@enduml

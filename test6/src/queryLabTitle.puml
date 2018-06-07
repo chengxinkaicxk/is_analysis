@@ -1,0 +1,10 @@
+@startuml
+
+title 基于GitHub的实验管理平台--查看实验课题用例的顺序图
+actor student
+student -> login : 执行登录操作
+login -> student_sub_record : 进入已选课程
+student_sub_record -> tests : 查看某已选课程的实验课题
+tests  --> student : 返回已选课程的所有实验课题
+
+@enduml

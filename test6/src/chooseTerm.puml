@@ -1,0 +1,8 @@
+@startuml
+title 基于GitHub的实验管理平台--选择学期用例的顺序图
+actor user
+user -> login : 执行登录操作
+login -> term : 选择学期
+term -> user :success
+
+@enduml
