@@ -91,5 +91,8 @@ stop
 ### 业务流程图如下：
 ![](secondDraw.png)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/chengxinkaicxk/is_analysis.git
 ## master123ssss
